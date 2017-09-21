@@ -21,6 +21,7 @@ namespace Lab07George
 
             Console.WriteLine("This is my collection of products.");
 
+            // adds products using an initializer
             Inventory<Product> myProducts = new Inventory<Product>()
             {
                 soap,
@@ -31,11 +32,13 @@ namespace Lab07George
                 apple,
                 melon
             };
+            // adds products using the Add method
             myProducts.Add(shampoo);
             myProducts.Add(broom);
             myProducts.Add(mop);
             myProducts.Add(towel);
 
+            // foreach using the Enum
             foreach (Product p in myProducts)
             {
                 Console.WriteLine(p.Name + " is a " + p.ProductType);
@@ -43,7 +46,6 @@ namespace Lab07George
 
             myProducts.Remove(soap);
 
-            myProducts.ViewAll();
 
             Console.Read();
         }
@@ -54,7 +56,7 @@ namespace Lab07George
  * * Hint: Your generic collection should be Inventory<Product>
  * * Include an enum in your Product
  * * Make sure the generic has the functionality to use a foreach loop.
- * Your generic collection should Add(), Remove() items in the collection
- * Stretch - if there is time, make it so you can ViewAll and create a method to output all items to the console
+ * * Your generic collection should Add(), Remove() items in the collection
+ * X Stretch - if there is time, make it so you can ViewAll and create a method to output all items to the console
  * * Add at least 10 items to your List, and output them to the console. 
  * * Add some items through the Add() Method, and others through a collection initializer */

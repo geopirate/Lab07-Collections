@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Lab07George
 {
@@ -10,25 +9,21 @@ namespace Lab07George
         T[] product = new T[20];
         int counter = 0;
 
+        // adds item and doubles the size of the array if full
         public void Add(T item)
         {
             if (counter == product.Length)
             {
                 Array.Resize(ref product, product.Length * 2);
-                // int index = count * 2;
-                // T[] extension = new T[index];
-                // Array.Copy(students, extension, index);
-                // students = extension;
             }
             product[counter++] = item;
-            // students[counter] =student;
-            // counter++;
         }
 
+        // removes and item and removes the hole from the array
         public void Remove(T item)
         {
-            Console.WriteLine($"Deleting {item}");
             int removeAt = Array.IndexOf(product, item);
+            
             bool remove = false;
             T[] newArray = new T[product.Length];
 
@@ -37,6 +32,7 @@ namespace Lab07George
                 if(i == removeAt)
                 {
                     remove = true;
+                    Console.WriteLine($"Deleting requested product.");
                 }
                 else if (remove)
                 {
@@ -51,22 +47,7 @@ namespace Lab07George
             counter--;
         }
 
-        public void ViewAll()
-        {
-            /*foreach (Product p in this)
-            {
-                Console.WriteLine(p.Name + " is a " + p.ProductType);
-            }
-            Console.Read();*/
-            
-
-
-            for (int i = 0; i < counter; i++)
-            {
-                Console.WriteLine($"Thing {product[i].Name}");
-            }
-        }
-
+        // iterates through the collection
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < counter; i++)

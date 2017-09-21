@@ -14,13 +14,13 @@ namespace Lab07George
         {
             Name = name;
         }
-
+        // method
         public void Buy()
         {
             Console.WriteLine("${Name} sold!");
         }
     }
-
+    // enum of product categories
     enum Category
     {
         Housewares,
